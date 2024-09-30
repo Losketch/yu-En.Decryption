@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" href="./favicon.png">
+  <title>ユ！</title>
+</head>
+<body>
+  <div class="app">
+    <h1>ユ！语加密/解密工具</h1>
+    <div class="input-wrapper">
+      <textarea id="inputText" placeholder="输入文本" rows="3" oninput="autoResize(this)"></textarea>
+      <div class="button-group">
+        <button onclick="encrypt()">加密</button>
+        <button class="paste-button" onclick="pasteContent()">粘贴</button>
+      </div>
+    </div>
+    <div class="input-wrapper">
+      <textarea id="encryptedText" placeholder="加密后的文本" rows="3" oninput="autoResize(this)"></textarea>
+      <div class="button-group">
+        <button onclick="decrypt()">解密</button>
+        <button onclick="copyContent()">复制</button>
+      </div>
+    </div>
+    <div class="appprompt">提示<div id="prompt"></div></div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

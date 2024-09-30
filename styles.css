@@ -1,0 +1,147 @@
+:root {
+  --color-primary: #7d8fc8;
+  --color-bg: #1c1b1f;
+  --color-container-primary: #2a3042;
+  --color-text: #e7e9eb;
+  --color-container-secondary: #414659;
+  --color-border: #9499a0;
+  --color-text-placeholder: #a2a7ae;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #333;
+}
+::-webkit-scrollbar-thumb {
+  background: #666;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+body {
+  background: var(--color-bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.app {
+  background: var(--color-container-primary);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 100%;
+  max-width: 600px;
+  box-sizing: border-box;
+  color: var(--color-text-placeholder);
+}
+
+.appprompt {
+  background: var(--color-container-secondary);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  box-sizing: border-box;
+  margin-top: 20px;
+  user-select: none;
+}
+
+h1 {
+  color: var(--color-text);
+  font-size: 1.875em;
+  line-height: 1.3333;
+  margin-bottom: 15px;
+}
+
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0;
+}
+
+textarea {
+  background: var(--color-container-secondary);
+  padding: 10px;
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  width: 100%;
+  resize: none;
+  transition: border-color 0.3s ease;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+textarea:focus {
+  border-color: var(--color-primary);
+  outline: none;
+}
+textarea::placeholder {
+  color: var(--color-text-placeholder);
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+button {
+  background-color: var(--color-primary);
+  color: var(--color-text);
+  border: none;
+  cursor: pointer;
+  margin: 0 5px;
+  border-radius: 100rem;
+  min-width: 3rem;
+  height: 2.5rem;
+  padding: 0 1.2rem;
+  font-size: .875rem;
+  user-select: none;
+  position: relative;
+  overflow: hidden;
+  transition: background-color 0.3s;
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+  appearance: none;
+}
+
+button::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: rgba(255, 255, 255, .5);
+  opacity: 0;
+  border-radius: 100%;
+  transform: scale(1, 1) translate(-50%);
+  transform-origin: 50% 50%;
+}
+
+@keyframes ripple {
+  0% {
+  transform: scale(0, 0);
+  opacity: 1;
+  }
+  20% {
+  transform: scale(25, 25);
+  opacity: 1;
+  }
+  100% {
+  opacity: 0;
+  transform: scale(40, 40);
+  }
+}
+
+button:focus:not(:active)::after {
+  animation: ripple 0.75s ease-out;
+}
