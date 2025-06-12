@@ -1,32 +1,39 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="icon" type="image/png" href="./favicon.png">
-  <title>ユ！</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="styles.css">
+	<link rel="icon" type="image/png" href="./favicon.png">
+	<title>ユ！</title>
 </head>
 <body>
-  <div class="app">
-    <h1>ユ！语加密/解密工具</h1>
-    <div class="input-wrapper">
-      <textarea id="inputText" placeholder="输入文本" rows="3" oninput="autoResize(this)"></textarea>
-      <div class="button-group">
-        <button onclick="encrypt()">加密</button>
-        <button class="paste-button" onclick="pasteContent()">粘贴</button>
-      </div>
-    </div>
-    <div class="input-wrapper">
-      <textarea id="encryptedText" placeholder="加密后的文本" rows="3" oninput="autoResize(this)"></textarea>
-      <div class="button-group">
-        <button onclick="decrypt()">解密</button>
-        <button onclick="copyContent()">复制</button>
-      </div>
-    </div>
-    <div class="appprompt">提示<div id="prompt"></div></div>
-    <p>Copyright © 2024 <a href="https://github.com/Losketch">Losketch</a>，<a href="https://www.bilibili.com/video/BV196tCekEz9/?share_source=copy_web&vd_source=114514">BV196tCekEz9</a></p>
-  </div>
-  <script src="script.js"></script>
+	<div class="app">
+		<h1>ユ！语加密/解密工具</h1>
+		<div class="input-wrapper">
+			<label for="tagInput">前缀 TAG（自定义）：</label>
+			<input type="text" id="tagInput" value="\u30E6\u200D" placeholder="请输入加密前缀 TAG，不能为空" />
+		</div>
+		<div class="input-wrapper">
+			<label for="plain">明文输入：</label>
+			<textarea id="plain" placeholder="在此输入要加密的文本…" rows="3"></textarea>
+			<div class="button-group">
+				<button id="btnEncrypt">加密</button>
+				<button id="btnPaste">粘贴</button>
+			</div>
+		</div>
+		<div class="input-wrapper">
+			<label for="cipher">密文/待解密：</label>
+			<textarea id="cipher" placeholder="这里显示加密结果，或输入要解密的密文…" rows="3"></textarea>
+			<div class="button-group">
+				<button id="btnDecrypt">解密</button>
+				<button id="btnCopy">复制</button>
+			</div>
+		</div>
+		<div class="appprompt">提示：<span id="prompt">—</span></div>
+		<p> Copyright © 2024-2025 <a href="https://github.com/Losketch" target="_blank">Losketch</a>， <a href="https://www.bilibili.com/video/BV196tCekEz9" target="_blank">BV196tCekEz9</a>
+		</p>
+	</div>
+	<script src="script.js"></script>
 </body>
 </html>
